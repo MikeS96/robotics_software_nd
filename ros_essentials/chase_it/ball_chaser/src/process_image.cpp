@@ -47,7 +47,7 @@ class ChaseBall
 
             // Loop through each pixel in the image and check if there's a bright white one
             for (int i = 0; i < img.height * img.step; i += 3) {
-                if (img.data[i] == white_pixel) 
+                if (img.data[i] == white_pixel && img.data[i + 1] == white_pixel && img.data[i + 2] == white_pixel) 
                 {
                     // Obtain the current row value
                     row = i % img.step;
@@ -63,19 +63,19 @@ class ChaseBall
                 {
                     // Turn Left
                     lin_x = 0.0;
-                    ang_z = 0.3;
+                    ang_z = 0.25;
                 }
                 else if (row > img.step * 2 / 3) 
                 {
                     // Turn Right
                     lin_x = 0.0;
-                    ang_z = -0.3;
+                    ang_z = -0.25;
                 }
                 else 
                 {
                     // Move Forward
                     lin_x = 0.5;
-                    ang_z = 0.0;
+                    ang_z = 0.25;
                 }
             }
             // Request a stop when there's no white ball seen by the camera
