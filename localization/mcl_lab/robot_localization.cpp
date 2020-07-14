@@ -232,16 +232,17 @@ int main()
 
     // Set robot new position to x=10.0, y=10.0 and orientation=0
     // Fill in the position and orientation values in myrobot.set() function
-    myrobot.set();
+    myrobot.set(10.0, 10.0, 0.0);
 
     // Printing out the new robot position and orientation
     cout << myrobot.show_pose() << endl;
 
     // Rotate the robot by PI/2.0 and then move him forward by 10.0
     // Use M_PI for the pi value
-    myrobot.move();
+    myrobot.move(M_PI/2.0, 10.0);
 
     // Print out the new robot position and orientation
+	cout << myrobot.show_pose() << endl;
 
 
     // Printing the distance from the robot toward the eight landmarks
