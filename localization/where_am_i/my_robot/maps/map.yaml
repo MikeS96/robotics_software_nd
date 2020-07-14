@@ -1,4 +1,4 @@
-image: map.pgm
+image: /home/sherlock/catkin_ws/src/my_robot/maps/map.pgm
 resolution: 0.01
 origin: [-15.0, -15.0, 0.0]
 occupied_thresh: 0.65
