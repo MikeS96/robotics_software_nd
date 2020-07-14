@@ -1,4 +1,3 @@
-//One out of many possible solutions
 #include <iostream>
 
 using namespace std;
