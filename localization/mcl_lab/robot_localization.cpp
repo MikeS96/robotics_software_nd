@@ -227,16 +227,36 @@ void visualization(int n, Robot robot, int step, Robot p[], Robot pr[])
 //####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####
 int main()
 {
+    //Practice Interfacing with Robot Class
     Robot myrobot;
-    // TODO: Simulate Noise
-    // Forward Noise=5.0, Turn Noise=0.1,Sense Noise=5.0
     myrobot.set_noise(5.0, 0.1, 5.0);
-    
     myrobot.set(30.0, 50.0, M_PI / 2.0);
     myrobot.move(-M_PI / 2.0, 15.0);
-    cout << myrobot.read_sensors() << endl;
+    //cout << myrobot.read_sensors() << endl;
     myrobot.move(-M_PI / 2.0, 10.0);
-    cout << myrobot.read_sensors() << endl;
+    //cout << myrobot.read_sensors() << endl;
+
+    // Create a set of particles
+    int n = 1000;
+    Robot p[n];
+
+    for (int i = 0; i < n; i++) {
+        p[i].set_noise(0.05, 0.05, 5.0);
+        //cout << p[i].show_pose() << endl;
+    }
+
+    //####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####
+
+    //Now, simulate motion for each particle
+    //Create a new particle set 'p2'
+    //Rotate each particle by 0.1 and move it forward by 5.0
+    //Assign p2 to p and print the particle poses, each on a single line
+    Robot p2[n];
+    for (int i = 0; i < n; i++) {
+        p2[i] = p[i].move(0.1, 5.0);
+        p[i] = p2[i];
+        cout << p[i].show_pose() << endl;
+    }
 
     return 0;
 }
