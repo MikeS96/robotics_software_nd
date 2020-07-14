@@ -225,6 +225,7 @@ void visualization(int n, Robot robot, int step, Robot p[], Robot pr[])
 */
 
 //####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####
+
 int main()
 {
     //Practice Interfacing with Robot Class
@@ -245,18 +246,32 @@ int main()
         //cout << p[i].show_pose() << endl;
     }
 
-    //####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####
+    //Re-initialize myrobot object and Initialize a measurment vector
+    myrobot = Robot();
+    vector<double> z;
 
-    //Now, simulate motion for each particle
-    //Create a new particle set 'p2'
-    //Rotate each particle by 0.1 and move it forward by 5.0
-    //Assign p2 to p and print the particle poses, each on a single line
+    //Move the robot and sense the environment afterwards
+    myrobot = myrobot.move(0.1, 5.0);
+    z = myrobot.sense();
+
+    // Simulate a robot motion for each of these particles
     Robot p2[n];
     for (int i = 0; i < n; i++) {
         p2[i] = p[i].move(0.1, 5.0);
         p[i] = p2[i];
-        cout << p[i].show_pose() << endl;
     }
+
+    //####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####
+
+    //TODO: Generate particle weights depending on robot's measurement
+    //TODO: Print particle weights, each on a single line
+    double w[n];
+    for (int i = 0; i < n; i++) {
+        w[i] = p[i].measurement_prob(z);
+        cout << w[i] << endl;
+    }
+ 
+ 
 
     return 0;
 }
