@@ -261,17 +261,34 @@ int main()
         p[i] = p2[i];
     }
 
-    //####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####
-
-    //TODO: Generate particle weights depending on robot's measurement
-    //TODO: Print particle weights, each on a single line
+    //Generate particle weights depending on robot's measurement
     double w[n];
     for (int i = 0; i < n; i++) {
         w[i] = p[i].measurement_prob(z);
-        cout << w[i] << endl;
+        //cout << w[i] << endl;
     }
- 
- 
+
+    //####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####
+
+    //Resample the particles with a sample probability proportional to the importance weight
+    Robot p3[n];
+    int index = gen_real_random() * n;
+    //cout << index << endl;
+    double beta = 0.0;
+    double mw = max(w, n);
+    //cout << mw;
+    for (int i = 0; i < n; i++) {
+        beta += gen_real_random() * 2.0 * mw;
+        while (beta > w[index]) {
+            beta -= w[index];
+            index = mod((index + 1), n);
+        }
+        p3[i] = p[index];
+    }
+    for (int k=0; k < n; k++) {
+        p[k] = p3[k];
+        cout << p[k].show_pose() << endl;
+    }
 
     return 0;
 }
