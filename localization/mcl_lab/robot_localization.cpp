@@ -227,26 +227,23 @@ void visualization(int n, Robot robot, int step, Robot p[], Robot pr[])
 //####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####
 int main()
 {
-    // Instantiating a robot object from the Robot class
-    Robot myrobot;
+    // Instantiate a robot object from the Robot class
+	Robot myrobot;
 
-    // Set robot new position to x=10.0, y=10.0 and orientation=0
-    // Fill in the position and orientation values in myrobot.set() function
-    myrobot.set(10.0, 10.0, 0.0);
+    // Set robot new position to x=30.0, y=50.0 and orientation=PI/2
+	myrobot.set(30.0, 50.0, M_PI/2.0);
 
-    // Printing out the new robot position and orientation
-    cout << myrobot.show_pose() << endl;
+    // Turn clockwise by PI/2 and move by 15 meters
+	myrobot.move(M_PI/2.0, 15.0);
 
-    // Rotate the robot by PI/2.0 and then move him forward by 10.0
-    // Use M_PI for the pi value
-    myrobot.move(M_PI/2.0, 10.0);
+    // Print the distance from the robot toward the eight landmarks
+	cout << myrobot.read_sensors() << endl;
 
-    // Print out the new robot position and orientation
-	cout << myrobot.show_pose() << endl;
+    // Turn clockwise by PI/2 and move by 10 meters
+	myrobot.move(M_PI/2.0, 15.0);
 
-
-    // Printing the distance from the robot toward the eight landmarks
-    cout << myrobot.read_sensors() << endl;
+    // Print the distance from the robot toward the eight landmarks
+	cout << myrobot.read_sensors() << endl;
 
     return 0;
 }
