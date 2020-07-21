@@ -8,4 +8,5 @@ list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
 add_library(hello SHARED script/hello.cpp)
 target_link_libraries(hello ${GAZEBO_LIBRARIES})
 
+# This line need to be added to export the world's plugin
 # export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/sherlock/Desktop/robotics_software_nd/gazebo_basics/myrobot/build
