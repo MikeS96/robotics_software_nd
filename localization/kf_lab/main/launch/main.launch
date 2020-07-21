@@ -28,10 +28,8 @@
   <!--For Rviz visualization + Robot state publisher-->
   <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch" />
 
-
   <!--RVIZ-->
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find main)/rviz/turtle3.rviz"/>
-
 
   <!--Turtlebot Teleop-->
   <include file="$(find turtlebot3_teleop)/launch/turtlebot3_teleop_key.launch" />
