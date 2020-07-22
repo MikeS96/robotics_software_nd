@@ -12,7 +12,7 @@ The content of this repository is divided in different sub-folders where each on
 	 - **project1**: Gazebo package with a world created using the building editor.
 	 
 <div  align="center">
-<img  src="./gazebo_basics/images/world.jpg" width="330">
+<img  src="./gazebo_basics/images/world.jpg" width="400">
 </div>
 
  - [**ROS essentials**](https://github.com/MikeS96/robotics_software_nd/tree/master/ros_essentials): Essential elements of robotics, Introduction to ROS, subscribers, publishers, services, among others.
@@ -20,7 +20,7 @@ The content of this repository is divided in different sub-folders where each on
 	 - **chase_it**: ROS package with a wheeled robot in a custom Gazebo world that chases a white ball, modifying the wheels' speed.
 
 <div  align="center">
-<img  src="./ros_essentials/images/ball_chaser.png" width="330">
+<img  src="./ros_essentials/images/ball_chaser.png" width="400">
 </div>
 
  - **[Localization](https://github.com/MikeS96/robotics_software_nd/tree/master/localization)**: The Kalman Filter (KF), Extended Kalman Filter (EKF) and robot pose relative to a known map with Monte Carlo Localization (MCL).
@@ -31,7 +31,7 @@ The content of this repository is divided in different sub-folders where each on
 	 - **where_am_i**: Used the Adaptative Monte Carlo Localization to drive a wheeled robot in a previously maped world.
 
 <div  align="center">
-<img  src="./localization/images/amcl.png" width="330">
+<img  src="./localization/images/amcl.png" width="400">
 </div>
 
  - [**Mapping and SLAM**](https://github.com/MikeS96/robotics_software_nd/tree/master/mapping_slam): Ocuppancy grid algorithm and different variants of the SLAM algorithm. 
@@ -40,12 +40,16 @@ The content of this repository is divided in different sub-folders where each on
 	 - **map_my_world**: Usage of RTAB-Map SLAM (Graph SLAM) to map a custom world.
  
 <div  align="center">
-<img  src="./mapping_slam/images/graph_slam.png" width="330">
+<img  src="./mapping_slam/images/graph_slam.png" width="400">
 </div>
 
  - [**Path planning and Navigation**](https://github.com/MikeS96/robotics_software_nd/tree/master/path_planning): Implementation of the A* algorithm, classical oath planning techniques and sample-based methods.
 	 - **classic_path_planning**: Minkowski sum implementation in C++ with triangular shapes.
 	 - **path_planning_lab**: Implementation of the A* algorithm in a real-world environment.
+
+<div  align="center">
+<img  src="./path_planning/path_planning_lab/a_star_real_world/Images/Path.png" width="400">
+</div>
 
 > Note: Some of the folders were directly taken from the Udacity's repository.
 
